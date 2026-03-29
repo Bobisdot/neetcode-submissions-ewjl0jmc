@@ -1,0 +1,14 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            int cmpl = target - nums[i];
+            if(map.containsKey(cmpl)){
+                return new int[]{map.get(cmpl),i};
+            }
+            map.put(nums[i],i);
+        }
+        throw new IllegalArgumentException("no match found");
+
+    }
+}
